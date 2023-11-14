@@ -1,0 +1,43 @@
+##Anotações de JS
+
+
+Para declarar uma variável em JS eu preciso antes de dela colocar a palavra reservada "var" ou "let". Posso começar variáveis com $ ou _.
+
+- JS em primeira mão reconhece float e int como do tipo NUMBER
+
+Abaixo alguns topos primitivos em JS:
+    number
+        infinity
+        NaN
+    
+    string
+
+    boolean
+
+    null
+
+    undefined
+
+    object
+        array
+
+    function
+
+object > Uma função interessante que tem relação com orientação a objeto. Documentação ainda não especificou legal
+array  > Vetores. Aparentemente complicado (?), mas vale muito a pena aprender
+null   > Acredite se quiser, um objeto, mas é bom entender melhor depois (isso aqui é bem estranho)
+NaN    > Not a Number, tradução, né número não
+
+
+IMPORTANTE
+Eu posso declarar uma variável inicialmente como inteiro e depois posso delcarar ela como uma string e ela aceita!
+
+
+ORDEM DE PRECEDENCIA DE OPERADORES ARITMÉTICOS
+
+1. ()
+2. **
+3. * / %
+4. + -
+
+

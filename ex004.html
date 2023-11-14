@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        nome = window.prompt('Seu nome: ')
+        document.write(`Seja bem-vindo ${nome}. Seu nome possui ${nome.length} letras <br/>`) //Usei placeholder com atributo para gerar uma mensagem na tela
+        //document.write escreve coisas na tela
+        //SIM, EU POSSO USAR TAGS DO HTML DENTRO DO JS!
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()} <br/>`)
+        document.write(`Seu nome em minusculas é ${nome.toLowerCase()}`)
+
+        salario = 1543.5
+
+        salario.toFixed(2) //Duas casas decimais para a variável salario
+
+        salario.toFixed(2).replace('.', ',') //Troca . pela , ao apresentar os decimais
+
+        document.write(`Seu salário atual é de: ${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`) //Linha importante pois localiza a string e me retorna um valor em Reais. USD no lugar de BRL retorna em dólar e EUR em Euro
+    </script>
+</body>
+</html>

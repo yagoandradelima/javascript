@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex001</title>
+    <style>
+        body {
+            background-color: black;
+            font: normal 0.9em arial;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá Mundo</h1>
+    <p>Teste inicial</p>
+    <script>
+
+        //A função window.prompt retorna uma string
+        //O sinal "+" concatena strings e soma "numbers"
+
+        var numero1 = Number.parseInt(window.prompt('Digite o primeiro número:')) //convertendo string para Int
+        var numero2 = Number.parseFloat(window.prompt('Digite o segundo numero: ')) //Convertendo string para Float
+        var soma = numero1 + numero2
+        window.alert('Soma total ' + String(soma))
+
+        /*
+            Tentei usar a vírgula ao invés do + para exibir o resultado e não deu certo, ou seja, o + concatena a variável à mensagem
+        */
+
+        /*
+            JS CONVERSÕES DE TIPO
+
+            Number.parseInt(n) > Transforma o tipo da variável 'n' para Inteiro
+
+            Number.parseFloat(n) > Transforma o tipo da variável 'n' para Float
+
+            Number(n) > Transforma a variável 'n' para NUMBER, mas o JS decide se é FLOAT ou INT baseado no INPUT do usuário
+
+            n.toString() > Transforma a variável 'n' para string
+
+            String(n) > Transforma a variável 'n' para string
+        */
+
+        /*
+            USANDO TEPLATE STRING COM PLACEHOLDER
+
+            Da mesma maneira como se utiliza um placeholder em python (o famoso print(f,"Olá mundo! {variavel}!")), em JS eu posso fazer a mesma coisa, mas a regra é outra!
+
+            Para usar placeholder é ESTRITAMENTE NECESSÁRIO USAR A CRASE PARA DELIMITAR A STRING A SEREM EXIBIDAS
+
+            Basta observar o exemplo abaixo
+        */
+
+        //Declarei 3 variáveis sem precisar usar palavras reservadas pra isso. Muito bom.
+
+        nome = 'Yago'
+        idade = 26
+        nota = 9
+
+        window.alert(`Meu nome é ${nome}, possuo ${idade} anos e tirei nota ${nota} em meu trabalho geral`)
+
+        /*
+            Seguindo exemplo do python, existem métodos e atributos. Ao final dos métodos majoritariamente haverá a inclusão de (), enquanto atributos não exigem essa escrita. Exemplo:
+
+            nome.length > quantidade de caracteres da string
+            nome.toUpperCase() > joga tudo para letras maiúsculas
+            nome.toLowerCase() > joga tudo para letras minúsculas
+
+            É muito bom aprender novos métodos na documentação oficial
+        */
+
+        alert('Teste sem o window')
+        
+    </script>
+</body>
+</html>
