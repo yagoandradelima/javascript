@@ -90,5 +90,3 @@ TESTE LÓGICO ? RESPOSTA CASO VERDADE : RESPOSTA CASO FALSO
 let media = 8
 
 media >= 7 ? 'Aprovado' : 'Reprovado'
-
-
