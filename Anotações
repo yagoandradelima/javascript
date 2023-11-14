@@ -41,3 +41,54 @@ ORDEM DE PRECEDENCIA DE OPERADORES ARITMÉTICOS
 4. + -
 
 
+INCREMENTE E DECREMENTO
+
+x += 1 > incremento de 1
+x ++ > incremento de 1 também, mas no node ele vai imprimir o valor anterior de x e só depois ele imprime com o somatório do incremento. Isso pois no JS existe uma ordem de precedente de incrementação.
+
+++ x > vai imprimir já o x incrementado.
+-- x > vai imprimir já o x decrementado
+
+
+OPERADORES RELACIONAIS
+
+Retorna resultados booleandos como em:
+5 > 2 -> TRUE
+7 < 4 -> FALSE
+8 >= 8 -> TRUE
+9 <= 7 -> FALSE
+5 == 5 -> TRUE
+4 != 4 -> FALSE
+
+    IDENTIDADE
+        5 === '5' -> FALSE
+        5 == '5' -> TRUE
+
+        === testa não somente a igualdade dos valores, ele testa o tipo. É um operador de igualdade restrita
+
+OPERADORES LÓGICOS
+
+! Negação (NOT)
+&& Conjunção (E)
+|| Disjunção (OU)
+
+PRECEDENCIA DOS OPERADORES LÓGICOS
+
+1. ()
+2. **
+3. * / % (sem ordem de precedência o que aparecer na esquerda primeiro é realizado)
+4. + -
+5. Operadores Relacionais (sem ordem de precedência o que aparecer na esquerda primeiro é realizado)
+3. !
+4. &&
+5. ||
+
+OPERADOR TERNÁRIO
+
+TESTE LÓGICO ? RESPOSTA CASO VERDADE : RESPOSTA CASO FALSO
+
+let media = 8
+
+media >= 7 ? 'Aprovado' : 'Reprovado'
+
+
