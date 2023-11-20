@@ -1,7 +1,7 @@
 ##Anotações de JS
 
 
-Para declarar uma variável em JS eu preciso antes de dela colocar a palavra reservada "var" ou "let". Posso começar variáveis com $ ou _.
+Para declarar uma variável em JS eu preciso antes colocar a palavra reservada "var" ou "let". Posso começar variáveis com $ ou _ também. Mas, eu também já posso declarar uma variável em necessariamente declarar essas palavras reservadas antes, basta adicionar o sinal de receber (=) após a declaração
 
 - JS em primeira mão reconhece float e int como do tipo NUMBER
 
@@ -33,7 +33,7 @@ IMPORTANTE
 Eu posso declarar uma variável inicialmente como inteiro e depois posso delcarar ela como uma string e ela aceita!
 
 
-ORDEM DE PRECEDENCIA DE OPERADORES ARITMÉTICOS
+##ORDEM DE PRECEDENCIA DE OPERADORES ARITMÉTICOS
 
 1. ()
 2. **
@@ -41,7 +41,7 @@ ORDEM DE PRECEDENCIA DE OPERADORES ARITMÉTICOS
 4. + -
 
 
-INCREMENTE E DECREMENTO
+##INCREMENTE E DECREMENTO
 
 x += 1 > incremento de 1
 x ++ > incremento de 1 também, mas no node ele vai imprimir o valor anterior de x e só depois ele imprime com o somatório do incremento. Isso pois no JS existe uma ordem de precedente de incrementação.
@@ -50,7 +50,7 @@ x ++ > incremento de 1 também, mas no node ele vai imprimir o valor anterior de
 -- x > vai imprimir já o x decrementado
 
 
-OPERADORES RELACIONAIS
+##OPERADORES RELACIONAIS
 
 Retorna resultados booleandos como em:
 5 > 2 -> TRUE
@@ -66,13 +66,15 @@ Retorna resultados booleandos como em:
 
         === testa não somente a igualdade dos valores, ele testa o tipo. É um operador de igualdade restrita
 
-OPERADORES LÓGICOS
+
+##OPERADORES LÓGICOS
 
 ! Negação (NOT)
 && Conjunção (E)
 || Disjunção (OU)
 
-PRECEDENCIA DOS OPERADORES LÓGICOS
+
+##PRECEDENCIA DOS OPERADORES LÓGICOS
 
 1. ()
 2. **
@@ -83,10 +85,57 @@ PRECEDENCIA DOS OPERADORES LÓGICOS
 4. &&
 5. ||
 
-OPERADOR TERNÁRIO
+##OPERADOR TERNÁRIO
 
 TESTE LÓGICO ? RESPOSTA CASO VERDADE : RESPOSTA CASO FALSO
 
 let media = 8
 
 media >= 7 ? 'Aprovado' : 'Reprovado'
+
+
+
+##ZVEN DE DOM!!
+
+DOM é basicamente uma maneira de utilizar JS dentro do meu site.
+
+Claro, isso é um resumo do resumo. Utilizando termosa mais técnicos, DOM é Domain Object Model ou Modelo de Objeto de Domínio.
+
+Todo o DOM vem da raiz window que é basicamente a raiz da árvore DOM da maioria dos sites (não sei se é unânime) e a árvore DOM são os objetos do HTML de um site organizados por parents e childs (uma árvore hierárquica) Exemplo:
+
+           window
+location  document  history
+            html
+        head    body
+meta    title | (elementos dentro do body como p, divs, h1, h2, h3)
+
+Esqueceu o que é o DOM ou uma árvore DOM? Cara, Módulo C, Aula 01, a partir do minuto 10. Só vai!
+
+Qualquer objeto mencionado na árvore DOM é um elemento e eles podem ser selecionados através de várias maneiras.
+
+#Por TAG:
+Sim, cada tag do HTML pode ser selecionada por dentro do JavaScript. Isso acontece ao se usar o comando:
+
+window.document.getElementsByTagName()
+
+Vai no ex005 ver um exemplo!
+
+
+#por ID
+Os IDs do HTML podem ser utilizados também para serem selecionados. 
+
+getElementbyID() é o comando para isso
+
+!!Percebeu que não tem ElementS aqui? É porquê o ID é ÚNICO no HTML. Não há mais de um mesmo nome de ID 
+
+#por Nome
+Exatamente da mesma maneira que um ID e Class. Inclusive é a mesma maneira tradicional de declarar isso em HTML (eu nem sabia que dava pra colocar isso em HTML kkkk)
+
+#por Classe
+Funciona da mesma forma que o ID, mas só que para classe. O comando é super similar
+
+getElementsbyClass()
+
+
+
+#por Seletor (compatibilidade duvidosa)

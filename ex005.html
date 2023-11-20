@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciando DOM</title>
+    <style>
+        body {
+            background-color: rgb(10, 216, 216);
+            color: white;
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> no meu documento</p>
+    <div id="msg" class="02">Clique em mim</div>
+
+    <script>
+        window.document.write('Olá, Mundo!<br>')//Escrevi algo dentro do site usando DOM através do JS
+
+        var p1 = document.getElementsByTagName('p')[0] 
+        
+        document.write(p1.innerText) //inner text é para ele escrever o conteúdo de p1
+
+        //innerHTML traz a formatação completa do HTML. O innerText pega o segundo prágrafo sem o DOM em negrito. Já HTML consegue trazer a tag strong
+
+        /*
+            Lembra de vetores em Python? Então, aqui estamos usando uma semantica e sintaxe similar.
+            Eu quero selecionar o primeiro parágrafo? uso o getElementsByTagName('p') para selecionar
+            parágrafo, mas existe mais de um, logo, assim como no array do python, a contagem
+            de seleção começa em 0! Ou seja, ao selecionar [0], eu estou pedindo para o JS selecionar
+            o primeiro parágrafo (de cima para baixo) do meu documento.
+
+            Essa regra de [0][1] e assim sucessivamente serve para todas as tags
+        */
+
+        var corpo = window.document.body //A partir de agora a variável corpo está selecionando o body do meu html
+
+        corpo.style.backgroundColor = 'red'
+
+        window.document.body.style.backgroundColor = 'blue' 
+        
+        /*
+            Objeto atrás de objeto e atingi o mesmo resultado anterior. Isso pq o resultado anterior guardou objetos em uma variável única.
+        */
+
+        var d = document.getElementById('msg')
+
+        document.write('<br>' + d.innerText) //br pra quebrar a linha
+
+        var f = document.getElementsByClassName('02')[0] //Só tem um, mas eu não quero arriscar
+
+        f.innerText = 'Oi' //Eu posso alterar o conteúdo do texto interno com esse comando
+
+        var g = window.document.querySelector('div#msg') //Selecionei o elemento dentro dos () do mesmo jeito que é feito em CSS
+
+        g.style.backgroundColor = 'black' //alterando a cor de fundo
+
+
+
+
+    </script>
+</body>
+</html>
