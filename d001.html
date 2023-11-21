@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de nacionalidade</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        section h1 {
+            font-size: 2em;
+            font-weight: lighter;
+        }
+
+        section p {
+            font-size: 1.2em;
+        }
+
+        input {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: lighter;
+            width: 180px;
+            height: 25px;
+            font-size: 1.1em;
+            border-radius: 3px;
+            background-color: rgb(224, 224, 224);
+            padding: 3px;
+        }
+
+        div.res {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: lighter;
+            color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Formulário de validação de nacionalidade</h1>
+        <p>Digite aqui sua nacionalidade: <input aria-label="input" type="text" id="pais"></p>
+        <input type="button" value="Verificar" id="ver">
+    </section>
+    <div class="res">
+        <p>Digite no campo acima a sua nacionalidade e clique em verificar</p>
+    </div>
+
+    <script>
+        document.getElementById('ver').addEventListener('click', verificar)
+        
+        function verificar(){
+            var txtpais = document.getElementById('pais')
+            var resposta = document.getElementsByClassName('res')[0]
+            var pais = txtpais.value // TEM QUE TER UMA VARÍAVEL PEGANDO O VALUE senão ele pega o script interno do HTML pra comparar
+
+            if (pais == 'brasil') {
+                resposta.innerText += 'Você é brasileiro!'
+            }
+
+            else {
+                resposta.innerText += 'Você é estrangeiro!'
+            }
+        }
+        
+    </script>
+</body>
+</html>
