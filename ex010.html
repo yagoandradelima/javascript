@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+</head>
+<body>
+    <h1>Sistema de velocidade</h1>
+    Velocidade do carro: <input aria-label="txtvel" type="number" name="txtvel" id="txtvel"> Km/h <input type="button" value="Verificar" id="ver" onclick="clicar()">
+
+    <div class="res">
+
+    </div>
+
+    <script>
+        function clicar(){
+            var txtvel = document.getElementById('txtvel')
+            var vel = Number(txtvel.value)
+            var res = document.getElementsByClassName('res')[0] //Quando puxar por class SEMPRE incluir [] no final senão não funciona
+            res.innerHTML = `<p>Sua velocidade é de <strong>${vel}Km/H</strong></p>`
+
+            /*
+                += em string gera concatenação!
+
+                Se liga como eu ou usar o re.innerHTML 2 vezes pra gerar um efeito de texto composto!
+
+                Ah, não esquece que o inner HTML aceita as tags do HTML! Não é tão funcional quando
+                dentro da tag HTML, que apertando tab vai tudo automaticamente, mas funciona!
+            */
+            
+            if (vel > 80) {
+                res.innerHTML += '<p>Você está acima da velocidade permitida! <strong>Multado</strong>!</p>'
+            }
+
+            else {
+                res.innerHTML += '<p>Você está dentro da velocidade permitida. Dirija com cuidado!</p>'
+            }
+            
+        }
+
+        /*
+            Quando tentei colocar as condições normalmente,
+            o texto das condições substituía TODA a tela do HTML somente
+            pela frase presente no document.write
+
+            Deve ter uma forma de contornar isso...
+        */
+    </script>
+</body>
+</html>

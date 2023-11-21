@@ -44,7 +44,14 @@ Eu posso declarar uma variável inicialmente como inteiro e depois posso delcara
 ##INCREMENTE E DECREMENTO
 
 x += 1 > incremento de 1
-x ++ > incremento de 1 também, mas no node ele vai imprimir o valor anterior de x e só depois ele imprime com o somatório do incremento. Isso pois no JS existe uma ordem de precedente de incrementação.
+x ++ > incremento de 1 também, mas no node ele vai imprimir o valor anterior de x e só depois ele imprime com o somatório do incremento. Isso pois no JS existe uma ordem de precedente de incrementação. Por exemplo
+
+x = 0
+x += 1
+>resultado inicial: 0
+x
+>resultado: 1
+
 
 ++ x > vai imprimir já o x incrementado.
 -- x > vai imprimir já o x decrementado
