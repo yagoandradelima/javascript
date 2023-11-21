@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="somar" onclick="somar()">
+
+    <div id="res">
+        Resultado
+    </div>
+
+    <script>
+    function somar(){
+        var txtn1 = document.getElementById('txtn1') //Atenção! Ele pegou um texto e não um número nessa variável. Tem que converter!!
+        var txtn2 = document.getElementById('txtn2') //Atenção! Ele pegou um texto e não um número nessa variável. Tem que converter!!
+        var n1 = Number(txtn1.value) //Convertendo para Number
+        var n2 = Number(txtn2.value) //Convertendo para Number
+        var res = document.getElementById('res') //Pegando o texto para fazer ele ser sobreescrito pelo resultado depois
+        var soma = n1 + n2
+        res.innerText = (`O resultado final é ${soma}`)
+    }
+    </script>
+</body>
+</html>

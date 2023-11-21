@@ -136,6 +136,27 @@ Funciona da mesma forma que o ID, mas só que para classe. O comando é super si
 
 getElementsbyClass()
 
-
-
 #por Seletor (compatibilidade duvidosa)
+Você utiliza o comando window.document.querySelector('tag#id')
+
+É colocar literalmente o seletor do CSS dentro dos () para conseguir acessar o elemento
+
+
+
+##Funções em JS
+
+Uma função é similar às linguagens de programação padrão
+Você declara ela em um bloco e ela será executada assim que as suas condições forem realizadas.
+
+function acao(parametro) {
+    bloco
+}
+
+Sintaxe acima. 
+
+Eu consigo declarar as funções dentro do HTML e dentro do SCRIPTa de JS. As formas de fazer isso? Vai no Exercício 06 e 07, jogador!
+
+Tem muitos comentários lá, mas não esquece dos detalhes de placeholder, hein!?
+
+
+
