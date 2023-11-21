@@ -42,5 +42,5 @@ switch (diaSem) {
         break
 }
 
-//break pe obrigatório dentro do switch!
+//break é obrigatório dentro do switch!
 //Switch é bom em situações pontuais
