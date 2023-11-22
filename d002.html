@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Idade</title>
+    <title>Padrão</title>
     <style>
         body {
-            background-color: rgb(47, 168, 168);
+            background-color: rgb(47, 168, 168); 
         }
 
         header {
@@ -20,7 +20,7 @@
 
         section {
             width: 550px;
-            height: 500px;
+            height: 400px;
             background-color: antiquewhite;
             border-radius: 10px;
             margin: auto;
@@ -35,25 +35,84 @@
             color: whitesmoke;
             text-shadow: 2px 1px 15px rgba(0, 0, 0, 0.719);
         }
+
+        #msg {
+            font: normal normal normal 1.2em arial;
+            color: black;
+            text-align: center;
+        }
+
+        #foto {
+            text-align: center; /*Centralizou a imagem (?)*/
+            
+        }
+
+        #imagem {
+            border-radius: 50%;
+            box-shadow: 4px 3px 10px black;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Calculadora de Idade</h1>
+        <h1>Hora do dia</h1>
     </header>
 
     <section>
-        <div>
-
+        <div id="msg">
+            <p>Aqui vai aparecer a hora</p>
         </div>
-        <div>
-
+        <div id="foto">
+            <img id="imagem" src="imagens/manha-pq.jpg" alt="Foto do dia">
         </div>
     </section>
     
     <footer>
         <p>&copy;<em>Yago Andrade</em></p>
     </footer>
+
+    <script>
+        document.body.addEventListener('load', carregar()) //Evento load = carregar a página
+        //O evento load fica observando o carregamento da pagina. Quando a página carrega ele é acionado
+
+        function carregar () {
+            var msg = document.getElementById('msg')
+            var imagem = document.getElementById('imagem')
+            var data_atual = new Date()
+            //var hora_atual = data_atual.getHours()
+
+            var hora_atual = 10
+
+            if (hora_atual < 12) {
+                msg.innerHTML = `<p>Bom dia! Espero que tenha acordado bem.<br></p>`
+                msg.innerHTML += `<p>A hora atual é ${hora_atual} horas</p>`
+                imagem.src = 'imagens/manha-pq.jpg'
+            } else if (hora_atual < 18) {
+                msg.innerHTML = `<p>Boa Tarde! Espero que seu dia esteja bom.<br></p>`
+                msg.innerHTML += `<p>A hora atual é ${hora_atual} horas</p>`
+                imagem.src = 'imagens/tarde-pq.jpg'
+                document.body.style.background = '#daae6b'
+            } else {
+                msg.innerHTML = `<p>Boa Noite! Espero que seu dia tenha sido ótimo.<br></p>`
+                msg.innerHTML += `<p>A hora atual é ${hora_atual} horas</p>`
+                imagem.src = 'imagens/noite-pq.jpg'
+                document.body.style.background = '#6372f3'
+            }
+
+            /*
+                MUITA ATENÇÃO PRO COMANDO img.src
+
+                Eu acreditei que o comando img era o mesmo do HTML,
+                mas na realidade eu confundi, o comando é:
+
+                variável.src = 'caminho da imagem'
+
+                é que a sintaxe do vídeo era img, mas img era a variável
+                do código. No meu caso a sintaxe fica: imagem.src!!!
+
+            */
+        }
+    </script>
 
 </body>
 </html>
