@@ -47,6 +47,10 @@
             
         }
 
+        #env {
+            margin-bottom: 15px;
+        }
+
         #imagem {
             border-radius: 50%;
             box-shadow: 4px 3px 10px black;
@@ -63,20 +67,21 @@
             <p>
             <label for="ano">Ano de Nascimento</label>
             <input aria-label="ano" type="number" name="ano" id="txtano">
-             </p>
-
+             </p>      
+             
             <p>
-            
-            Sexo: 
-            <input type="radio" name="masc" id="masc">
-            <label for="masc">Masculino</label>
-            <input type="radio" name="fem" id="fem">
-            <label for="fem">Feminino</label>
+                Sexo:
+                <input type="radio" name="sexo" id="masc" value="masculino">
+                <label for="masc">Masculino</label>
+                <input type="radio" name="sexo" id="fem" value="feminino">
+                <label for="fem">Feminino</label>
             </p>
+                
+            <input type="button" value="Enviar" id="env">
+
         </div>
         <div id="pessoa">
             <img id="imagem" src="imagens/manha-pq.jpg" alt="Foto do dia">
-            
         </div>
     </section>
     
@@ -85,8 +90,27 @@
     </footer>
 
     <script>
-        
+        document.getElementById('env').addEventListener('click', enviar)
+
+        function enviar () {
+            var txtano = document.getElementById('txtano')
+            var ano_nasc = Number(txtano.value)
+            var idade = 2023 - ano_nasc
+            var resp = document.getElementById('pessoa')
+            resp.innerHTML = `<p>Você possui ${idade} anos!</p>`
+        }
+
     </script>
 
 </body>
 </html>
+
+<!--
+
+    Estudar mais sobre a tag forms!
+
+    inputs do tipo radio (input:radio) precisam possui o mesmo nome
+    mas reconhecimentos de values e ids diferentes. Assim só um deles
+    pode ser selecionados
+
+-->
