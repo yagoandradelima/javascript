@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+         body {
+            background-color: rgb(47, 168, 168); 
+        }
+
+        header {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            color: whitesmoke;
+            text-shadow: 3px 2px 10px black;
+            font-size: 1.5em;
+        }
+
+        section {
+            width: 400px;
+            height: 280px;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            margin: auto;
+            border: 1px solid rgb(54, 54, 54);
+            box-shadow: 3px 3px 15px rgb(70, 69, 69);
+        }
+
+        footer {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            color: whitesmoke;
+            text-shadow: 2px 1px 15px rgba(0, 0, 0, 0.719);
+        }
+
+        #dados_contador {
+            font: normal normal normal 1.2em arial;
+            color: black;
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        #resposta {
+            text-align: center; /*Centralizou a imagem (?)*/
+            font-family: arial;
+            font-size: 1.1em;
+            width: 390px;
+        }
+
+        #env {
+            margin-bottom: 15px;
+        }
+
+        #foto {
+            border-radius: 50%;
+            box-shadow: 4px 3px 10px black;
+            height: 210px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+
+    <section>
+        <div id="dados_contador">
+            <p><label for="inicio">Início: </label><input type="number" name="inicio" id="inicio"></p>
+            <p><label for="fim">Fim: </label><input type="number" name="fim" id="fim"></p>
+            <p><label for="passo">Passo: </label><input type="number" name="passo" id="passo"></p>
+            <p><input type="button" value="Enviar"></p>
+        </div>
+        <div id="resposta">
+            <p>Aguardando contagem...</p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy;<em>Yago Andrade</em></p>
+    </footer>
+</body>
+</html>
