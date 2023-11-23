@@ -20,7 +20,7 @@
 
         section {
             width: 550px;
-            height: 400px;
+            height: 430px;
             background-color: antiquewhite;
             border-radius: 10px;
             margin: auto;
@@ -44,6 +44,8 @@
 
         #pessoa {
             text-align: center; /*Centralizou a imagem (?)*/
+            font-family: arial;
+            font-size: 1.1em;
             
         }
 
@@ -51,9 +53,10 @@
             margin-bottom: 15px;
         }
 
-        #imagem {
+        #foto {
             border-radius: 50%;
             box-shadow: 4px 3px 10px black;
+            height: 210px;
         }
     </style>
 </head>
@@ -81,7 +84,7 @@
 
         </div>
         <div id="pessoa">
-            <img id="imagem" src="imagens/manha-pq.jpg" alt="Foto do dia">
+            
         </div>
     </section>
     
@@ -92,12 +95,54 @@
     <script>
         document.getElementById('env').addEventListener('click', enviar)
 
-        function enviar () {
+        function enviar() {
             var txtano = document.getElementById('txtano')
-            var ano_nasc = Number(txtano.value)
-            var idade = 2023 - ano_nasc
+            var data = new Date()
+            var ano = data.getFullYear()
             var resp = document.getElementById('pessoa')
-            resp.innerHTML = `<p>Você possui ${idade} anos!</p>`
+            
+            //Primeiro if para verificar se os dados foram inseridos corretamente
+            if (txtano.value.length == 0|| txtano.value > ano) {
+                window.alert('[ERRO] Por favor, verifique os dados e tente novamente!')
+            
+            //Else para começar o cálculo após os inputs corretos do usuário
+            } else {
+                var sexo = document.getElementsByName('sexo')
+                var ano_nasc = Number(txtano.value)
+                var idade = ano - ano_nasc
+                var genero = ''
+                var imagem = document.createElement('img')
+                imagem.setAttribute('id', 'foto')
+                //Testando se Masculino foi selecionado
+                if (sexo[0].checked) {
+                    genero = 'Homem'
+                    if (idade >= 0 && idade < 10) {
+                        imagem.setAttribute('src', 'imagens/homem-crianca-pq.jpg')
+                    } else if (idade < 21) {
+                        imagem.setAttribute('src', 'imagens/homem-jovem-pq.jpg')
+                    } else if (idade < 51) {
+                        imagem.setAttribute('src', 'imagens/homem-adulto-pq.jpg')
+                    } else {
+                        imagem.setAttribute('src', '') //Coloco depois
+                    }
+                //Testando se Feminino foi selecionado
+                } else if (sexo [1].checked) {
+                    genero = 'Mulher'
+                    if (idade >= 0 && idade < 10) {
+                        imagem.setAttribute('src', 'imagens/mulher-crianca-pq.jpg')
+                    } else if (idade < 24) {
+                        imagem.setAttribute('src', 'imagens/mulher-jovem-pq.jpg')
+                    } else if (idade < 51) {
+                        imagem.setAttribute('src', 'imagens/mulher-adulto-pq.jpg')
+                    } else {
+                        imagem.setAttribute('src', '') //Coloco depois
+                    }
+                }
+                resp.innerHTML = `<p>Detectacmos ${genero} com ${idade} anos!</p>`
+                resp.appendChild(imagem)
+            }
+
+            
         }
 
     </script>
