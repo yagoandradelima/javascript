@@ -71,7 +71,7 @@
             <p><label for="inicio">Início: </label><input type="number" name="inicio" id="inicio"></p>
             <p><label for="fim">Fim: </label><input type="number" name="fim" id="fim"></p>
             <p><label for="passo">Passo: </label><input type="number" name="passo" id="passo"></p>
-            <p><input type="button" value="Enviar"></p>
+            <p><input type="button" value="Contar" id="contar"></p>
         </div>
         <div id="resposta">
             <p>Aguardando contagem...</p>
@@ -81,5 +81,38 @@
     <footer>
         <p>&copy;<em>Yago Andrade</em></p>
     </footer>
+    <script>
+        document.getElementById('contar').addEventListener('click', contar)
+        
+        function contar(){
+            let t_inicio = document.getElementById('inicio') //mesmo input sendo do tipo number, ele sai como string
+            let t_fim = document.getElementById('fim')       //mesmo input sendo do tipo number, ele sai como string
+            let t_passo = document.getElementById('passo')   //mesmo input sendo do tipo number, ele sai como string
+            let resp = document.getElementById('resposta')
+
+            if (t_inicio.value.length == 0) {
+                alert('Nada digitado no Início. O valor a ser considerado para o Início será 1.')
+                let inicio = 1
+            } else if (t_fim.value.length == 0)  {
+                alert('Nada digitado no Fim. O valor a ser considerado para o Fim será 10.')
+                let fim = 10
+            } else if (t_passo.value.length == 0) {
+                alert('Nada digitado no Passo. O valor a ser considerado será 1.')
+                let passo = 1
+            } else {
+                let inicio = Number(t_inicio.value)
+                let fim = Number(t_fim.value)
+                let passo = Number(t_passo.value)
+                
+                resp.innerHTML = 'Começando a contagem!<br>'
+                for (contador = inicio; contador < fim; contador+=passo){
+                    resp.innerText += `${contador}👉`
+                }
+                resp.innerText += '🏁'
+            }
+        }
+        
+
+    </script>
 </body>
 </html>
