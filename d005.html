@@ -84,19 +84,21 @@
         <p>&copy;<em>Yago Andrade</em></p>
     </footer>
     <script>
-    document.getElementById('contar').addEventListener('click', contar())
-    let resposta
+    document.getElementById('contar').addEventListener('click', contar)
 
     function contar(){
-    if (document.getElementById('input_num').value.length == 0){
+    let t_input_num = document.getElementById('input_num')
+    let resposta = document.getElementById('resposta')
+
+    if (t_input_num.value.length == 0){
         alert('[ERRO!] Nada digitado no campo de escolha. Por favor, insira um valor permitido.')
     } else {
-        let escolha = Number(document.getElementById('input_num'))
+        let escolha = Number(t_input_num.value)
         let tabuada = 1
         
             while (tabuada <= 10) {
                 let mult = escolha * tabuada
-                 = `${escolha} x ${tabuada} = ${mult} `
+                resposta.innerHTML += `${escolha} x ${tabuada} = ${mult}<br>`
                 tabuada++
             }
         }
