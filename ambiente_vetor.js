@@ -16,7 +16,7 @@ console.log(`Esse são os valores do meu vetor: ${num}`)
 num[5] = 7
 
 /*
-    Quando eu quiser adicionar um elemente na última parte do array sem ter que me preocupar em delcarar a [ultima] posição dele como feito no exemplo anterior, eu uso o comando abaixo:
+    Quando eu quiser adicionar um elemente na última parte do array sem ter que me preocupar em declarar a [ultima] posição dele como feito no exemplo anterior, eu uso o comando abaixo:
 */
 
 num.push(8) //Nada de tentar um append aqui, hein!?
