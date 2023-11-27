@@ -95,10 +95,9 @@
     } else {
         let escolha = Number(t_input_num.value)
         let tabuada = 1
-        
+        resposta.innerHTML = '' //Limpa a tela antes de executar uma nova tabuada
             while (tabuada <= 10) {
-                let mult = escolha * tabuada
-                resposta.innerHTML += `${escolha} x ${tabuada} = ${mult}<br>`
+                resposta.innerHTML += `${escolha} x ${tabuada} = ${escolha*tabuada}<br>`
                 tabuada++
             }
         }
