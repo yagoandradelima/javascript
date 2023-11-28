@@ -47,14 +47,15 @@
             float: left;
             margin-left: 10px;
             width: 100px;
-            height: 185px;
+            height: 140px;
         }
 
         #resposta {
             text-align: center; /*Centralizou a imagem (?)*/
             font-family: arial;
             font-size: 1.1em;
-            width: 390px;
+            width: 200px;
+            height: 195px;
         }
 
         #env {
@@ -74,7 +75,7 @@
 </head>
 <body>
     <header>
-        <h1>Analisador de números</h1>
+        <h1></h1>
     </header>
 
     <section>
@@ -83,16 +84,26 @@
         </div>
 
         <div id="resposta">
-            <select name="feedback" name="feedback" id="fdb"></select>
-            <input type="button" value="Validar" id="validar">
+            <p>
+                <select name="feedback" name="feedback" id="fdb"></select>
+                <input type="button" value="Validar" id="validar">
+            </p>
         </div>
+        
     </section>
     
     <footer>
         <p>&copy;<em>Yago Andrade</em></p>
     </footer>
     <script>
-        
+        document.getElementById('contar').addEventListener('click', envio)
+        document.getElementById('validar').addEventListener('click',validar)
+
+        function envio () {
+            
+        }
+
+
     </script>
 </body>
 </html>
