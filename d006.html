@@ -86,7 +86,7 @@
         <div id="resposta">
             <p>
                 <select name="feedback" name="feedback" id="fdb"></select>
-                <input type="button" value="Validar" id="validar">
+                <input type="button" value="Finalizar" id="finalizar" onclick="finalizar()">
             </p>
         </div>
         
@@ -114,7 +114,7 @@
 
         //Função criada para verificar se o valor digitado após aceito, está na lista
         function inLista(n, l){
-            //Ler o obsidian para entender que -1 é o retorno para quando o elemento da lista nã
+            //Ler o obsidian para entender que -1 é o retorno para quando o elemento da lista não é encontrado
             if(l.indexOf(Number(n)) != -1){
                 return True
             } else {
@@ -122,14 +122,55 @@
             }
         }
 
+        //Função que vai executar efetivamente o que se pede no desafio
         function adicionar() {
-            if(isnumero(num.value) && inLista(num.value)){
-
+            //If verificando se a variável passou pelas funções de verificação. Vale lembrar que ! em JS é NOT
+            if(isnumero(num.value) && !inLista(num.value)){
+                valores.push(Number(num.value))
+                //Criando uma tag option pra escrever dentro do select
+                let item = document.createElement('option')
+                //Escrevendo dentro do select
+                item.text = `Valor ${num.value} adicionado`
+                lista.appendChild(item)
+                //Limpa o texto final ao adicionar um novo número à lista
+                res.innetHTML = ''
             } else {
-                window.alert('Valor inválido. Digite novamente um valor.')
+                window.alert('Valor inválido ou já encontrado na lista.')
             }
+            //Após digitar, dando certo ou errado ele vai zerar o campo
+            num.value = ''
+            //faz o cursor voltar a piscar nesse campo sem precisar clicar nele para funcionar
+            num.focus()
         } 
 
+        function finalizar(){
+            if (valores.length == 0) {
+                window.alert('Adicione valores antes de finalizar!')
+            } else {
+                let tot = valores.length
+                let maior = valores[0]
+                let menor = valores[0]
+                let soma = 0
+                let media = 0
+
+                for (let pos in valores){
+                    soma += valores[pos]
+                    if (valores[pos] > maior){
+                        maior = valores[pos]
+                    }
+
+                    if (valores[pos] < menor) {
+                        menor = valores[pos]
+                    }
+                }
+                res.innetHTML = ''
+                res.innerHTML += `<p>Ao todo temos ${tot} números cadastrados</p>`
+                res.innerHTML += `<p>O maior valor informado foi ${maior}</p>`
+                res.innerHTML += `<p>O menor valor informado foi ${menor}</p>`
+                res.innerHTML += `<p>A media dos valores digitados é ${media}</p>`
+                res.innerHTML += `<p>A soma dos valores digitados foi ${soma}</p>`
+            }
+        }
 
     </script>
 </body>
