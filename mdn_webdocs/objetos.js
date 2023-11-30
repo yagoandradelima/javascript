@@ -1,19 +1,8 @@
-/*
-if (true){
-    x = 5; 
-}
-
-console.log(x)
-
-
-console.log(12 - "37") //O sinal de - está gerando subtração enquanto sinal d e+ gera concatenação
-*/
-
 var lanche = 'hamburguer'
 
 function meuLanche(n){
-    if (nome == "batata frita") {
-        return nome
+    if (n == "batata frita") {
+        return n
     } else {
         return "Não vendemos esse lanche aqui"
     }
@@ -29,4 +18,11 @@ var cardapio = {
 }
 
 
+var b = new Boolean(false);
+
+if (b) {
+    console.log('Essa condição é verdadeira')
+} else {
+    console.log('Essa condição é falsa')
+}
 
