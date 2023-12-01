@@ -26,3 +26,15 @@ console.log(subtra(10, 2))
 
 //Mas eu psoso reduzir AINDA mais
 const subtracao = (num1, num2) => num1 + num2
+
+
+
+//Testando uma função construtora
+function Carro(marca){
+	this.marcaCarro = marca;
+	this.vendido = false;
+}
+
+const carro01 = new Carro('Fiat')
+
+console.log(carro01.marcaCarro)
