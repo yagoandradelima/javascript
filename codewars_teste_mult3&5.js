@@ -21,3 +21,4 @@ function solution(number){
   
   }
 
+//Essa estrutura não está errada, porém eu poderia simplesmente usar while e if para resolver de maneira mais enxuta
