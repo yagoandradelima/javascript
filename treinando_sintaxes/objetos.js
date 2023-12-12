@@ -5,7 +5,7 @@ objeto_teste.propriedade1 = 'Eu sou a propriedade 1 do objeto teste'
 //Chamando a propriedade nova
 console.log(objeto_teste.propriedade1)
 
-//Criando um metodo novo
+//Criando um metodo novo usando arrow function
 objeto_teste.metodo1 = () => 'Eu sou o método 1 do objeto teste'
 //Chamando o metodo novo
 console.log(objeto_teste.metodo1())
