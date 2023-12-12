@@ -1,0 +1,1 @@
+const objeto_teste = {}
